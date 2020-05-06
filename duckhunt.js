@@ -96,12 +96,15 @@ window.onload = function () {
 
   // 11. BOOM. Attach a "click" handler that adds the "shot" class to
   //     the duck when you click on it!
+function shot () {
 
-  function die(duck) {
-    numKilled;
-    duck.removeClass('left right').addClass('shot').fadeOut(dieFadeOutTime, function () {
-    });
-  }
+  newDiv.classname += 'shot';
+  
+}
+  createDuck.addEventListener("click", shot);
+
+  
+    
 
 
 
