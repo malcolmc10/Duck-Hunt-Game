@@ -125,7 +125,8 @@ window.onload = function () {
     div.forEach(duck => {
       duck.addEventListener("click", e => {
         setTimeout(() => {
-        e.target.classList.remove("duck");
+        e.target.remove();
+        checkForWinner();
         console.log("Bye,bye!")
       }, 1000)
     })
@@ -134,9 +135,14 @@ window.onload = function () {
 
   // 13. Create a new function named checkForWinner() that reads the DOM
   //     to see if there are any ducks left. (How can we check the DOM for more than one element?, and how can we see how many elements we get back) If not, alert "YOU WIN!"
+
 function checkForWinner() {
+  if (document.querySelectorAll('div').length === 0) {
+    console.log("Congrats! You win!")
 
 }
+    
+
   // 14. BONUS: The ducks are moving pretty erratically, can you think
   //     of a way to adjust the ducks speed based on how far needs to move?
 
@@ -145,4 +151,5 @@ function checkForWinner() {
 
   // FIN. You win 1 trillion tokens.  Play the day away!
   // };
+}
 };
