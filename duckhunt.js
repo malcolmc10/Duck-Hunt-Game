@@ -96,25 +96,47 @@ window.onload = function () {
 
   // 11. BOOM. Attach a "click" handler that adds the "shot" class to
   //     the duck when you click on it!
-function shot () {
 
-  newDiv.classname += 'shot';
-  
-}
-  createDuck.addEventListener("click", shot);
+  // function shot(e) {
+  //   newDiv.className += ' shot';
+  //   console.log("word")
+  // }
+  // const selectAll = document.querySelectorAll('div')
+  // console.log(selectAll)
+  // selectAll.forEach(event => {
+  //   event.addEventListener('click', shot)
+  // })
 
-  
-    
+  const div = document.querySelectorAll("div");
+  div.forEach(duck => {
+    duck.addEventListener("click", e => {
+      e.target.classList.add("shot");
+      console.log("ouch!")
+    });
+  });
 
 
 
   // 12. After a duck has been clicked on, remove it from the DOM after
   //     a short delay (1 second) Hint Hint...use setTimeout
-  //     as for removing the element check out https://dzone.com/articles/removing-element-plain
+  //     as for removing the element check out 
+
+  // this.setTimeout(() => {
+    div.forEach(duck => {
+      duck.addEventListener("click", e => {
+        setTimeout(() => {
+        e.target.classList.remove("duck");
+        console.log("Bye,bye!")
+      }, 1000)
+    })
+  });
+
 
   // 13. Create a new function named checkForWinner() that reads the DOM
   //     to see if there are any ducks left. (How can we check the DOM for more than one element?, and how can we see how many elements we get back) If not, alert "YOU WIN!"
+function checkForWinner() {
 
+}
   // 14. BONUS: The ducks are moving pretty erratically, can you think
   //     of a way to adjust the ducks speed based on how far needs to move?
 
